@@ -10,11 +10,6 @@
   
   
   <nav class="navbar navbar-inverse">
-  
-  
-  
-  
-  
 <nav class="navbar navbar-inverse">
 <div class="container">
 <div class="navbar-header">
@@ -29,10 +24,10 @@ ariaexpanded="false">
  <a class="navbar-brand" href="#">Logo</a>
 </div>
 <div class="collapse navbar-collapse" id="navbar-collapse-1">
-<ul class="nav navbar-nav">
+<ul class="navbar-fixed-top">
  <li class="active"><a href="#">Link</a></li>
  <li><a href="#" title="Strona lab1">Strona lab1</a></li>
- <li><a href="#">Link</a></li>
+ <li><a  href=”#main-page”.>Link</a></li>
  </ul>
 </div> 
 </div>
@@ -46,7 +41,7 @@ ariaexpanded="false">
 
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
+  <div class="container">
   
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,24 +81,81 @@ ariaexpanded="false">
 
 
 <header>
+<section id=”main-page” class=”jumbotron”> 
 <div class=”container”>
-<div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="1.jpg" class="d-block w-100"  alt="zdjecie nr.1">
-    </div>
-    <div class="carousel-item">
-      <img src="2.jpg" class="d-block w-100"  alt="zdjecie nr.2">
-    </div>
-    <div class="carousel-item">
-      <img src="3.jpg" class="d-block w-100"  alt="zdjecie nr.3">
+<h1>Pierwsza sekcja strony!</h1>
+<p>Integer ut placerat purus. In in sodales metus, quis blandit tortor. Aliquam rhoncus turpis pellentesque mi vestibulum facilisis. Mauris viverra eros vitae metus convallis, nec aliquam tortor maximus. Nam imperdiet justo ac ante dapibus, a pretium urna sodales. Sed vitae sollicitudin nibh, ut maximus risus. Sed ornare quam id leo varius cursus in at augue. Integer iaculis molestie quam, ut fermentum est facilisis sit amet. Maecenas eleifend euismod elit, sed tempus odio sagittis eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse vestibulum porta lacus, vel hendrerit justo mattis nec.</p>
+
+<p>Vivamus eget euismod nibh, id suscipit mauris. Donec nisi ante, aliquam id viverra accumsan, pharetra vel sem. Ut vehicula purus id nisi tristique, et pharetra turpis laoreet. Morbi bibendum porta enim, in venenatis libero egestas vel. Quisque sapien orci, iaculis quis feugiat a, fermentum ut nunc. Curabitur sollicitudin tellus sit amet blandit rhoncus. Mauris at rutrum elit, sed tempus ex. Morbi facilisis velit eu ex volutpat pulvinar. Maecenas aliquet massa tincidunt, suscipit neque sed, volutpat eros. Donec ac augue sit amet magna fringilla pulvinar ac vitae metus. Proin fringilla nibh velit, quis consectetur sapien fermentum nec.</p>
+
+<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris ac sollicitudin ex. Integer nisi massa, congue sed magna at, vehicula sollicitudin eros. Nam in dui cursus, placerat odio pretium, ornare purus. Donec suscipit sit amet leo in cursus. Curabitur tellus felis, consectetur quis tortor in, rutrum rhoncus massa. Curabitur viverra, nunc nec consectetur ultricies, mi purus eleifend magna, ac pretium dolor nulla sit amet ex. Ut sodales a leo ut blandit. Curabitur sagittis sit amet risus quis pretium. Aenean venenatis vehicula tellus, ut egestas odio facilisis eu. Sed efficitur quis nulla quis mollis. Maecenas scelerisque tincidunt augue, quis porta augue iaculis in. Mauris condimentum maximus posuere. Curabitur volutpat sapien massa, eu aliquam lectus suscipit sed. Sed auctor finibus sodales.</p>
+
+<p>Praesent fringilla odio in turpis pharetra, consequat auctor mauris semper. Integer gravida egestas laoreet. Sed porta lacinia hendrerit. Vivamus quam quam, porta vel odio ac, gravida hendrerit arcu. Praesent iaculis elit vitae mi ullamcorper viverra. Nullam pulvinar lacus non mauris malesuada, ac laoreet est sodales. Ut imperdiet convallis massa, ut tincidunt dui blandit vitae.<p>
+
+<p>Aliquam eget aliquet sapien. Nam ac nisl in orci semper egestas. Nullam viverra pellentesque elementum. Proin luctus arcu at nunc blandit pulvinar. In gravida, mauris vitae cursus placerat, sapien dolor imperdiet nibh, a eleifend lacus est quis ligula. Vivamus nec semper metus, quis accumsan odio. Praesent ut erat condimentum, auctor lectus mollis, venenatis massa. Nam a mauris at velit feugiat molestie. Donec vitae viverra felis. In eu felis blandit, bibendum tortor et, feugiat diam. Nullam nec tempor nisi. Nam commodo ante ac augue vulputate, nec venenatis eros condimentum. Suspendisse eget est lectus. Aenean a mauris enim. Aliquam metus justo, porttitor a lacus at, scelerisque semper ligula.</p>
+</div>
+</section>
+
+
+
+
+
+<footer>
+<a href="#" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Polityka Prywatnosci
+</a>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Nazwa</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+        <button type="button" class="btn btn-primary">Zapisz zmiany</button>
+      </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+</div>
+</footer> 
+
+
+
+
+
+
+
+
+
+
+<div class=”container”>
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="1.jpg" class="d-block w-100" alt="Krajobraz stawu oraz w tle lasu">
+    </div>
+    <div class="carousel-item">
+      <img src="2.jpg" class="d-block w-100" alt="Krajobraz pustyni">
+    </div>
+    <div class="carousel-item">
+      <img src="3.jpg" class="d-block w-100" alt="Krajobraz wyzyny">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
@@ -111,7 +163,6 @@ ariaexpanded="false">
 </div>
 </header> 
 
-	
 	
 	
 	
