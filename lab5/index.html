@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<title> lab 5 </title>
+</head>
+<body>
+	<script>
+		const tablica = [ 'Michal', '21255', 'Grzesiek', '25032', 'cosik' ];
+		tablica[tablica.length-1] = 'cosiczek';
+		document.write(''+tablica[4]);
+		tablica[5]='nowe';
+		tablica[tablica.length] = 'nowiutkie';
+		tablica.push=('8','9','10','XD')
+		tablica.unshift('Hej')
+		const tab2 = tablica.push(5,6);
+		tab2.pop();
+		tab2.shift();
+	</script>
+	
+	<script>
+	const tab3 = ['ja','ty','cos','cosikowac','nic'];
+		document.write('<p>Pierwszy element to <strong>');
+		document.write(tab3[0] + '</strong></p>');
+		tab3.unshift('nowe');
+		document.write('<p>Ostatni element to <strong>'+tab3[tab3.length-1]+'</strong></p>');
+		document.write('<p>Pierwszy element to <strong>'+tab3[0]+'</strong></p>');
+		const ilosc = document.scripts.length;
+		document.write('<p>Ilosc elementów script: '+ilosc+'</p>');
+	</script>
+
+</body>
+</html>
