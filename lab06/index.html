@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<title> lab 6 </title>
+</head>
+<body>
+	<script>
+		let score = 0;
+		let q = 0;
+		
+		const questions = [
+		['Kiedy wszedł na rynek Counter-Strike 2?', '2023'],
+		['W którym roku urodził się Adrian Fifuw?','2003'],
+		['Gdzie Adrian mieszka?','pasłęk'],
+		['Czy Garbatini Kapini ma garba?','tak']
+		];
+
+		testQuestion(questions[i]);
+		q++;
+		
+		function testQuestion(question) {
+			if (answer == question[1]) {
+				score++;
+			}
+		}
+	</script>
+	
+	
+	<script>
+		let message = 'Liczba punktów: ' + score;
+		message += ' z ' + questions.length;
+		message += '.';
+		document.write('<p>' + message + '</p>');
+</script>
+</body>
+</html>
