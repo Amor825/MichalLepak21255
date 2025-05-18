@@ -2,32 +2,117 @@
 <html lang="pl">
 <head>
 	<meta charset="UTF-8">
-	<title> lab 5 </title>
+	<title>Lab 5</title>
+	<style>
+		body { font-family: Arial; padding: 20px; }
+		section { margin-bottom: 40px; }
+	</style>
 </head>
 <body>
-	<script>
-		const tablica = [ 'Michal', '21255', 'Grzesiek', '25032', 'cosik' ];
-		tablica[tablica.length-1] = 'cosiczek';
-		document.write(''+tablica[4]);
-		tablica[5]='nowe';
-		tablica[tablica.length] = 'nowiutkie';
-		tablica.push=('8','9','10','XD')
-		tablica.unshift('Hej')
-		const tab2 = tablica.push(5,6);
-		tab2.pop();
-		tab2.shift();
-	</script>
-	
-	<script>
-	const tab3 = ['ja','ty','cos','cosikowac','nic'];
-		document.write('<p>Pierwszy element to <strong>');
-		document.write(tab3[0] + '</strong></p>');
-		tab3.unshift('nowe');
-		document.write('<p>Ostatni element to <strong>'+tab3[tab3.length-1]+'</strong></p>');
-		document.write('<p>Pierwszy element to <strong>'+tab3[0]+'</strong></p>');
-		const ilosc = document.scripts.length;
-		document.write('<p>Ilosc elementów script: '+ilosc+'</p>');
-	</script>
+	<h1>Lab 5 - tablice i quizy</h1>
+	<section id="zadanie1">
+		<h2>Zadanie 1 - Manipulacje tablicowe</h2>
+		<script>
+			const tablica = ['Michal', '21255', 'Grzesiek', '25032', 'cosik'];
+			document.write('<p>Przed modyfikacją: ' + tablica[4] + '</p>');
+			tablica[tablica.length - 1] = 'cosiczek';
+			document.write('<p>Po modyfikacji: ' + tablica[4] + '</p>');
+			tablica[5] = 'nowe';
+			tablica[tablica.length] = 'nowiutkie';
+			tablica.push('8','9','10','XD');
+			tablica.unshift('Hej','Witam');
+			document.write('<p>Cała tablica: ' + tablica.join(', ') + '</p>');
+		</script>
+	</section>
+	<section id="zadanie2">
+		<h2>Zadanie 2 - Wyświetlanie i dodawanie elementów</h2>
+		<script>
+			const dwaSkibidi = ['ja', 'ty', 'cos', 'cosikowac', 'nic'];
+			document.write('<p>Pierwszy element to <strong>' + dwaSkibidi[0] + '</strong></p>');
+			document.write('<p>Ostatni element to <strong>' + dwaSkibidi[dwaSkibidi.length-1] + '</strong></p>');
+			dwaSkibidi.unshift('nowe');
+			document.write('<p>Po unshift pierwszy element to <strong>' + dwaSkibidi[0] + '</strong></p>');
+		</script>
+	</section>
+	<section id="zadanie3">
+		<h2>Zadanie 3 - Liczenie elementów</h2>
+		<script>
+			const iloscScriptow = document.scripts.length;
+			document.write('<p>Na stronie jest <strong>' + iloscScriptow + '</strong> elementów &lt;script&gt;.</p>');
+		</script>
+	</section>
+	<section id="main-page">
+		<h2>Zadanie 4 - DOM, pętle i funkcja</h2>
+		<p id="imie"></p>
+		<p id="nazwisko"></p>
+		<p id="tablica1"></p>
+		<p id="petlaWhile"></p>
+		<p id="petlaFor"></p>
+		<button onclick="pokazDane()">Pokaż dane</button>
+		<script>
+			document.getElementById('imie').innerHTML = "Imię: <strong>Michał</strong>";
+			document.getElementById('nazwisko').innerHTML = "Nazwisko: <strong>Lepak</strong>";
+			document.getElementById('tablica1').innerHTML = "Z tablicy: "+jedenSkibidi[0]+ " i "+jedenSkibidi[1];
+			let i = 0;
+			let wynikWhile = '';
+			while (i < Math.floor(jedenSkibidi.length / 2)) {
+				wynikWhile += jedenSkibidi[i] + ', ';
+				i++;
+			}
+			document.getElementById('petlaWhile').innerHTML = "While: " + wynikWhile;
+			let wynikFor = '';
+			for (let i = 0; i < jedenSkibidi.length; i++) {
+				wynikFor += jedenSkibidi[i] + ' | ';
+			}
+			document.getElementById('petlaFor').innerHTML = "For: " + wynikFor;
 
+			function pokazDane() {
+				let imie = document.getElementById('imie').innerText;
+				let nazwisko = document.getElementById('nazwisko').innerText;
+				alert(imie + '\n' + nazwisko);
+			}
+		</script>
+	</section>
+	<section id="quiz">
+	<h2>QUIZIK</h2>
+	<div id="quizContainer">
+		<p id="pytanie"></p>
+		<input type="text" id="odpowiedz" placeholder="Twoja odpowiedź tutaj: ">
+		<button onclick="sprawdzOdp()">Dalej</button>
+	</div>
+	<p id="wynik"></p>
+</section>
+	<script>
+		const pytanka = [
+			['Ile nóg ma pies?', '4'],
+			['Kolor nieba w dzień?', 'niebieski'],
+			['Stolica Polski?', 'warszawa']
+		];
+		let aktualne = 0;
+		let punkty = 0;
+		const pytanieElement = document.getElementById('pytanie');
+		const input = document.getElementById('odpowiedz');
+		const wynikElement = document.getElementById('wynik');
+		function pokazPytanie() {
+			if (aktualne < pytanka.length) {
+				pytanieElement.textContent = pytanka[aktualne][0];
+				input.value = '';
+				input.focus();
+			} else {
+				document.getElementById('quizContainer').style.display = 'none';
+				wynikElement.innerHTML = `Koniec quizu! <br>Zgarnąłeś(aś): <strong>${punkty}</strong>/${pytanka.length} punktów`;
+			}
+		}
+		function sprawdzOdp() {
+			const odp = input.value.trim().toLowerCase();
+			const poprawna = pytanka[aktualne][1].toLowerCase();
+			if (odp===poprawna) {
+				punkty++;
+			}
+			aktualne++;
+			pokazPytanie();
+		}
+		pokazPytanie();
+	</script>
 </body>
 </html>
