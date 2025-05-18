@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 6 – Quiz o Fifuwie</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2em; }
+    #quizBox { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+    input, button { padding: 8px; margin-top: 10px; width: 100%; font-size: 1rem; }
+    button { cursor: pointer; }
+    #nextBtn { display: none; }
+  </style>
+</head>
+<body>
+  <div id="quizBox">
+    <h2>Quiz</h2>
+    <p id="questionText">Wczytywanie pytania...</p>
+    <input type="text" id="answerInput" placeholder="Twoja odpowiedź">
+    <button id="submitBtn" onclick="checkAnswer()">Sprawdź </button>
+    <button id="nextBtn" onclick="nextQuestion()">Następne pytanie </button>
+    <p id="feedback"></p>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    let score = 0;
+    let q = 0;
+    const questions = [
+      ['Kiedy wszedł na rynek Counter-Strike 2?', '2023'],
+      ['Kto wstrzymał słońce a ruszył ziemią?', 'Mikołaj Kopernik'],
+      ['Chrzest Polski', '966'],
+      ['Z jakiej bajki był Quasimodo?', 'Dzwonnik z Notre Dame'],
+	  ['Jaki team wygrał Shanghai Major 2024?','Spirit']
+    ];
+    function showQuestion() {
+      if (q < questions.length) {
+        document.getElementById('questionText').textContent = questions[q][0];
+        document.getElementById('answerInput').value = '';
+        document.getElementById('feedback').textContent = '';
+        document.getElementById('submitBtn').style.display = 'inline-block';
+        document.getElementById('nextBtn').style.display = 'none';
+      } else {
+        document.getElementById('questionText').textContent = ' Koniec quizu!';
+        document.getElementById('answerInput').style.display = 'none';
+        document.getElementById('submitBtn').style.display = 'none';
+        document.getElementById('nextBtn').style.display = 'none';
+        document.getElementById('feedback').textContent = '';
+        document.getElementById('result').innerHTML = `<strong>Liczba punktów: ${score} z ${questions.length}</strong>`;
+      }
+    }
+    function checkAnswer() {
+      const answer = document.getElementById('answerInput').value.trim().toLowerCase();
+      const correct = questions[q][1].toLowerCase();
+      const feedback = document.getElementById('feedback');
+      if (answer === correct) {
+        feedback.textContent = 'Poprawna odpowiedź!';
+        score++;
+      } else {
+        feedback.textContent = `Błąd! Poprawna odpowiedź: ${questions[q][1]}`;
+      }
+      document.getElementById('submitBtn').style.display = 'none';
+      document.getElementById('nextBtn').style.display = 'inline-block';
+    }
+    function nextQuestion() {
+      q++;
+      showQuestion();
+    }
+    window.onload = showQuestion;
+  </script>
+</body>
+</html>
