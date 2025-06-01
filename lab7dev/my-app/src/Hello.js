@@ -1,4 +1,8 @@
 function Hello() {
-    return <h1>Imie Nazwisko 21255</h1>;
-   }
+ return (
+ <div>
+<h1> Michał Lepak 21255 </h1>
+ </div>
+ );
+}
 export default Hello;

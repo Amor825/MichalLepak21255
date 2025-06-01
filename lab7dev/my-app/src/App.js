@@ -1,35 +1,42 @@
 import logo from './logo.svg';
 import './App.css';
 import Hello from './Hello';
-import ToggleDetails from './ToggleDetails.js'
-import ScoreDisplay from './ScoreDisplay.js'
-import TaskList from './TaskList.js'
-import UserList from './UserList.js';
-import TimerCounter from './TimerCounter.js';
+import HelloWithProps from './HelloWithProps';
+import Counter from './Counter';
+import InputTracker from './InputTracker';
+import LoginStatus from './LoginStatus';
+import TodoList from './TodoList';
+import LoginForm from './LoginForm';
+
 function App() {
+  const todos = ['Zrobić zakupy', 'Umyć auto', 'Napisać React'];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <Hello/>
-          <ToggleDetails/>
-          <ScoreDisplay/>
-          <TaskList/>
-          <UserList/>
-          <TimerCounter/>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        </a>
-      </header>
+    <div>
+      <h2>Ćwiczenie 1: <Hello/></h2>
+      <h2>Ćwiczenie 2: HelloWithProps</h2>
+      <HelloWithProps name="Anna" />
+      <HelloWithProps name="Bartek" />
+      <HelloWithProps name="Celina" />
+
+      <h2>Ćwiczenie 3: Counter</h2>
+      <Counter />
+
+      <h2>Ćwiczenie 4: InputTracker</h2>
+      <InputTracker />
+
+      <h2>Ćwiczenie 5: LoginStatus</h2>
+      <LoginStatus isLoggedIn={true} />
+      <LoginStatus isLoggedIn={false} />
+
+      <h2>Ćwiczenie 6: TodoList</h2>
+      <TodoList todos={todos} />
+
+      <h2>Ćwiczenie 7: LoginForm</h2>
+      <LoginForm />
     </div>
-   
   );
 }
 
 export default App;
+
