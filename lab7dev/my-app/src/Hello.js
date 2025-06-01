@@ -1,7 +1,7 @@
 function Hello() {
  return (
  <div>
-<h1> Michał Lepak 21255 </h1>
+<h2> Michał Lepak 21255 </h2>
  </div>
  );
 }
